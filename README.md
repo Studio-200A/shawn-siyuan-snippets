@@ -2,8 +2,8 @@
 
 ## Snippet types
 
-- CSS snippets
-- JS snippets
+- [CSS snippets](css)
+- [JS snippets](js)
 
 ## Structure
 
@@ -32,6 +32,4 @@
 
 - Collected from [链滴](https://ld246.com)
 
-- Last Updated: 13:11 GMT+8, June 10, 2026
-
-
+- Last Updated: 13:20 GMT+8, June 10, 2026
