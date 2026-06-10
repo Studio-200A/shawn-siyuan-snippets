@@ -1,0 +1,8 @@
+/* 数据库隐藏横向滚动条 CSS片段 */
+/* by JeffreyChen https://ld246.com/article/1727657583809/comment/1727669869343?r=JeffreyChen#comments */
+.av:not(:hover) > .av__container > .av__scroll {
+    scrollbar-width: none; /* 对于 Firefox 隐藏滚动条 */
+}
+.av:not(:hover) > .av__container > .av__scroll::-webkit-scrollbar {
+    display: none; /* 对于 Webkit 浏览器（Chrome, Safari等）隐藏滚动条 */
+}

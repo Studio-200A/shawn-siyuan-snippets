@@ -1,0 +1,20 @@
+/*
+ * 为思源笔记中的“顶级块”添加更淡、更虚的边框
+ * 排除分割线和 Callout 块，避免覆盖主题的 callout 背景
+ */
+.protyle-wysiwyg > div[data-type]:not([data-type="NodeThematicBreak"]):not([data-type="NodeCallout"]):not(.callout) {
+    border: 1px dashed rgba(160, 160, 160, 0.65);
+    padding: 8px;
+    margin: 6px 0 12px 0;
+    border-radius: 6px;
+}
+
+/* 优化选中状态下的边框，避免冲突 */
+.protyle-wysiwyg > div[data-type]:not([data-type="NodeThematicBreak"]):not([data-type="NodeCallout"]):not(.callout).protyle-wysiwyg--focus,
+.protyle-wysiwyg > div[data-type]:not([data-type="NodeThematicBreak"]):not([data-type="NodeCallout"]):not(.callout).protyle-wysiwyg--select {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--b3-theme-primary) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+}

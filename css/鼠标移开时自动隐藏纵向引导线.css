@@ -1,0 +1,7 @@
+div.li::before {
+opacity: 0 !important;
+transition: opacity 0.2s;
+}
+div.li:hover::before {
+opacity: 1 !important;
+}

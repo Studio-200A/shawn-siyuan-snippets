@@ -1,0 +1,102 @@
+/* 原作：https://ld246.com/article/1729662978962 */
+
+/* 原作：https://ld246.com/article/1729662978962 */
+
+:root {
+    /* 亮色模式下的自定义标题颜色 */
+    --custom-h1-light: #d40045;  /* 红 */
+    --custom-h2-light: #ff7f00;  /* 橙 */
+    --custom-h3-light: #66b82b;  /* 绿 */
+    --custom-h4-light: #093f86;  /* 蓝 */
+    --custom-h5-light: #340c81;  /* 紫 */
+    --custom-h6-light: #373530;  /* 黑 */
+
+    /* 暗色模式下的自定义标题颜色 */
+    --custom-h1-dark: #d40045;   /* 红 */
+    --custom-h2-dark: #ff7f00;   /* 橙 */
+    --custom-h3-dark: #66b82b;   /* 绿 */
+    --custom-h4-dark: #093f86;   /* 蓝 */
+    --custom-h5-dark: #340c81;   /* 紫 */
+    --custom-h6-dark: #EBEBEB;   /* 白 */
+}
+
+/* 根据主题模式设置标题颜色变量 */
+:root[data-theme-mode=light] {
+    --custom-h1-color: var(--custom-h1-light);
+    --custom-h2-color: var(--custom-h2-light);
+    --custom-h3-color: var(--custom-h3-light);
+    --custom-h4-color: var(--custom-h4-light);
+    --custom-h5-color: var(--custom-h5-light);
+    --custom-h6-color: var(--custom-h6-light);
+}
+
+:root[data-theme-mode=dark] {
+    --custom-h1-color: var(--custom-h1-dark);
+    --custom-h2-color: var(--custom-h2-dark);
+    --custom-h3-color: var(--custom-h3-dark);
+    --custom-h4-color: var(--custom-h4-dark);
+    --custom-h5-color: var(--custom-h5-dark);
+    --custom-h6-color: var(--custom-h6-dark);
+}
+
+/* 以下是合并了标题文本和标题编号颜色的样式定义 */
+
+/* 一级标题及其编号 */
+.protyle-wysiwyg [data-node-id].h1,
+.b3-typography h1 {
+    color: var(--custom-h1-color);
+}
+.protyle-wysiwyg [data-node-id].h1 [contenteditable]::before,
+.b3-typography h1::before {
+    color: var(--custom-h1-color) !important; /* !important 用于覆盖插件默认样式 */
+}
+
+/* 二级标题及其编号 */
+.protyle-wysiwyg [data-node-id].h2,
+.b3-typography h2 {
+    color: var(--custom-h2-color);
+}
+.protyle-wysiwyg [data-node-id].h2 [contenteditable]::before,
+.b3-typography h2::before {
+    color: var(--custom-h2-color) !important;
+}
+
+/* 三级标题及其编号 */
+.protyle-wysiwyg [data-node-id].h3,
+.b3-typography h3 {
+    color: var(--custom-h3-color);
+}
+.protyle-wysiwyg [data-node-id].h3 [contenteditable]::before,
+.b3-typography h3::before {
+    color: var(--custom-h3-color) !important;
+}
+
+/* 四级标题及其编号 */
+.protyle-wysiwyg [data-node-id].h4,
+.b3-typography h4 {
+    color: var(--custom-h4-color);
+}
+.protyle-wysiwyg [data-node-id].h4 [contenteditable]::before,
+.b3-typography h4::before {
+    color: var(--custom-h4-color) !important;
+}
+
+/* 五级标题及其编号 */
+.protyle-wysiwyg [data-node-id].h5,
+.b3-typography h5 {
+    color: var(--custom-h5-color);
+}
+.protyle-wysiwyg [data-node-id].h5 [contenteditable]::before,
+.b3-typography h5::before {
+    color: var(--custom-h5-color) !important;
+}
+
+/* 六级标题及其编号 */
+.protyle-wysiwyg [data-node-id].h6,
+.b3-typography h6 {
+    color: var(--custom-h6-color);
+}
+.protyle-wysiwyg [data-node-id].h6 [contenteditable]::before,
+.b3-typography h6::before {
+    color: var(--custom-h6-color) !important;
+}

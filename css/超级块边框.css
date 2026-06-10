@@ -1,0 +1,36 @@
+/*
+ * 最终版：为思源笔记中的“超级块”添加更淡、更虚的边框
+ * 结合用户反馈和可用性进行优化
+ */
+.protyle-wysiwyg [data-node-id][data-type="NodeSuperBlock"] {
+    /* 
+     * 定义边框样式
+     *
+     */
+    border: 1px dashed rgba(160, 160, 160, 0.65); /* 改成橙色的话就是rgba(255, 127, 0, 0.65) */
+    /* 你也可以尝试其他更浅的灰色，例如：
+       rgba(200, 200, 200, 0.2); // 稍微亮一点，20% 透明度
+       rgba(128, 128, 128, 0.1); // 稍暗一点，10% 透明度，会非常淡
+    */
+
+    padding: 8px; /* 增加内边距，让超级块内的内容有更多空间 */
+    margin-bottom: 12px; /* 增加超级块底部的间距 */
+    border-radius: 6px; /* 增加边框圆角，使外观更柔和 */
+}
+
+/* 优化选中状态下的边框，避免冲突和重复 */
+.protyle-wysiwyg [data-node-id][data-type="NodeSuperBlock"].protyle-wysiwyg--focus,
+.protyle-wysiwyg [data-node-id][data-type="NodeSuperBlock"].protyle-wysiwyg--select {
+    outline: none !important; /* 移除默认的蓝色选中边框 */
+    box-shadow: none !important; /* 移除默认的选中阴影 */
+    border-color: var(--b3-theme-primary) !important; /* 选中时改为主题强调色 */
+    border-style: solid !important; /* 选中时边框变为实线 */
+    border-width: 1px !important; /* 确保选中时边框宽度为 1px */
+}
+
+/* 再次强调：确保移除所有块的通用边框，只保留这个针对超级块的样式 */
+/* 如果你之前有为所有块添加边框的 CSS，请检查并删除或注释掉：
+.protyle-wysiwyg [data-node-id] {
+    border: ...;
+}
+*/

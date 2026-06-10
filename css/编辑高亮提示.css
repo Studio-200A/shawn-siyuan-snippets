@@ -1,0 +1,17 @@
+
+.sb:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15), -2px -2px 6px rgba(0, 0, 0, 0.15), 0 0 12px rgba(0, 0, 0, 0.1) !important;
+  transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out !important;
+}
+.p:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15), -2px -2px 6px rgba(0, 0, 0, 0.15), 0 0 12px rgba(0, 0, 0, 0.1) !important;
+  transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out !important;
+}
+.p.highlight {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5), -2px -2px 6px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out !important;
+}
+.p.highlight:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5), -2px -2px 6px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out !important;
+}

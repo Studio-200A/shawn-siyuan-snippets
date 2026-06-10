@@ -1,0 +1,20 @@
+/* Twemoji Mozilla: https://github.com/mozilla/twemoji-colr */
+@font-face {
+    font-family: "Twemoji Mozilla";
+    font-style: normal;
+    src: url("plugins/custom-fonts/static/fonts/Twemoji.Mozilla/Twemoji.Mozilla-0.7.0.ttf");
+}
+
+/* Noto Color Emoji by Google: https://fonts.google.com/noto/specimen/Noto+Color+Emoji */
+@font-face {
+    font-family: "Noto Color Emoji";
+    font-style: normal;
+    src: url("plugins/custom-fonts/static/fonts/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf");
+}
+
+:root:root {
+    --b3-font-family: "Google Sans Flex", "Nunito", "Ubuntu Sans", "Open Sans", "HYRunYuan", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", system-ui;
+    --b3-font-family-protyle: "Google Sans Flex", "Nunito", "Ubuntu Sans", "Open Sans", "Mozilla Text", "HYRunYuan", "Twemoji Mozilla", "Apple Color Emoji", "Hack Nerd Font", sans-serif;
+    --b3-font-family-code: "Hack Nerd Font Mono", "FiraMono Nerd Font", "JetBrainsMonoNL NF", "JetBrains Mono NL", "LXGW WenKai Mono", "等距更纱黑体 SC", "MesloLGS Nerd Font Mono", "mononoki", "Consolas", "Liberation Mono", "Menlo", "Courier", "monospace", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", monospace;
+    --b3-font-family-emoji: "Twemoji Mozilla", "Noto Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Android Emoji", emoji;
+}
