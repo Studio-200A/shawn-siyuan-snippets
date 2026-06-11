@@ -11,13 +11,13 @@
     --custom-h5-light: #340c81;  /* 紫 */
     --custom-h6-light: #373530;  /* 黑 */
 
-    /* 暗色模式下的自定义标题颜色 */
-    --custom-h1-dark: #d40045;   /* 红 */
-    --custom-h2-dark: #ff7f00;   /* 橙 */
-    --custom-h3-dark: #66b82b;   /* 绿 */
-    --custom-h4-dark: #093f86;   /* 蓝 */
-    --custom-h5-dark: #340c81;   /* 紫 */
-    --custom-h6-dark: #EBEBEB;   /* 白 */
+    /* 暗色模式下的自定义标题颜色 Monokai Dark 标题配色 */
+    --custom-h1-dark: #ff6188;   /* 红 */
+    --custom-h2-dark: #ffd866;   /* 橙 */
+    --custom-h3-dark: #a9dc76;   /* 绿 */
+    --custom-h4-dark: #78dce8;   /* 蓝 */
+    --custom-h5-dark: #ab9df2;   /* 紫 */
+    --custom-h6-dark: #fc9867;   /* 白 */
 }
 
 /* 根据主题模式设置标题颜色变量 */
@@ -100,3 +100,4 @@
 .b3-typography h6::before {
     color: var(--custom-h6-color) !important;
 }
+
