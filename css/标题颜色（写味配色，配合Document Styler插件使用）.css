@@ -9,13 +9,13 @@
     --custom-h5-light: #340c81;  /* 紫 */
     --custom-h6-light: #373530;  /* 黑 */
 
-    /* 暗色模式下的自定义标题颜色 */
+    /* 暗色模式下的自定义标题颜色 Monokai Pro 配色 */
     --custom-h1-dark: #ff6188;   /* 红 */
-    --custom-h2-dark: #ffd866;   /* 橙 */
+    --custom-h2-dark: #ffd866;   /* 黄 */
     --custom-h3-dark: #a9dc76;   /* 绿 */
-    --custom-h4-dark: #78dce8;   /* 蓝 */
+    --custom-h4-dark: #78dce8;   /* 青 */
     --custom-h5-dark: #ab9df2;   /* 紫 */
-    --custom-h6-dark: #fc9867;   /* 白 */
+    --custom-h6-dark: #fc9867;   /* 橙 */
 }
 
 /* 根据主题模式设置标题颜色变量 */
