@@ -1,0 +1,369 @@
+/* 
+ * 思源笔记代码块美化：深灰在线文档风格 + OneDark 高亮增强版
+ * titlebar: #575757
+ * content:  #333333
+ * normal text: #dcdfe4
+ * comment: #8b949e
+ */
+
+/* =========================================================
+ * 1. 代码块外观变量
+ * ========================================================= */
+
+:root,
+html[data-theme-mode=light],
+html[data-theme-mode=dark],
+html[data-theme-mode=green] {
+  --zhi-code-titlebar-bg: #575757;
+  --zhi-code-content-bg: #333333;
+  --zhi-code-border-color: #454545;
+
+  --zhi-code-title-color: #f2f2f2;
+  --zhi-code-muted-color: #c9c9c9;
+  --zhi-code-line-number-color: #aeb7c2;
+
+  --zhi-code-radius: 8px;
+  --zhi-code-titlebar-height: 40px;
+}
+
+/* =========================================================
+ * 2. 代码块整体外框
+ * ========================================================= */
+
+.b3-typography .code-block,
+.protyle-wysiwyg .code-block {
+  position: relative !important;
+  overflow: hidden !important;
+
+  padding-top: var(--zhi-code-titlebar-height) !important;
+  margin: 12px 0 !important;
+
+  border: 1px solid var(--zhi-code-border-color) !important;
+  border-radius: var(--zhi-code-radius) !important;
+  background: var(--zhi-code-titlebar-bg) !important;
+
+  box-shadow: none !important;
+}
+
+/* =========================================================
+ * 3. 顶部 titlebar
+ * ========================================================= */
+
+.b3-typography .code-block .protyle-action,
+.protyle-wysiwyg .code-block .protyle-action {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+
+  height: var(--zhi-code-titlebar-height) !important;
+  padding: 0 18px !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  background: var(--zhi-code-titlebar-bg) !important;
+  border-radius: var(--zhi-code-radius) var(--zhi-code-radius) 0 0 !important;
+
+  box-sizing: border-box !important;
+  z-index: 2 !important;
+}
+
+/* 左上角语言显示，例如 Plain Text / CSS / JavaScript */
+.b3-typography .code-block .protyle-action .protyle-action__language,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language {
+  position: static !important;
+
+  margin: 0 auto 0 0 !important;
+  padding: 0 !important;
+
+  height: var(--zhi-code-titlebar-height) !important;
+  line-height: var(--zhi-code-titlebar-height) !important;
+
+  opacity: 1 !important;
+  color: var(--zhi-code-title-color) !important;
+  background: transparent !important;
+
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+/* 语言后面的小下拉箭头 */
+.b3-typography .code-block .protyle-action .protyle-action__language::after,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language::after {
+  content: "▼";
+  display: inline-block !important;
+
+  margin-left: 7px;
+  color: var(--zhi-code-title-color);
+  font-size: 10px;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* 顶部右侧图标按钮 */
+.b3-typography .code-block .protyle-action .protyle-icon,
+.protyle-wysiwyg .code-block .protyle-action .protyle-icon {
+  position: static !important;
+
+  width: auto !important;
+  height: var(--zhi-code-titlebar-height) !important;
+
+  margin-left: 18px !important;
+  padding: 0 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  opacity: 1 !important;
+  color: var(--zhi-code-muted-color) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 顶部右侧 SVG 图标颜色 */
+.b3-typography .code-block .protyle-action .protyle-icon svg,
+.protyle-wysiwyg .code-block .protyle-action .protyle-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+  color: var(--zhi-code-muted-color) !important;
+  fill: currentColor !important;
+}
+
+/* 复制按钮保留显示 */
+.b3-typography .code-block .protyle-action__copy,
+.protyle-wysiwyg .code-block .protyle-action__copy {
+  display: inline-flex !important;
+}
+
+/* =========================================================
+ * 4. 代码正文区域
+ * 只设置背景、间距、滚动，不指定代码字体
+ * ========================================================= */
+
+.b3-typography .code-block div.hljs,
+.protyle-wysiwyg .code-block div.hljs {
+  margin: 0 !important;
+  padding: 18px 22px !important;
+
+  background: var(--zhi-code-content-bg) !important;
+
+  border: none !important;
+  border-top: 0 !important;
+  border-radius: 0 0 var(--zhi-code-radius) var(--zhi-code-radius) !important;
+
+  overflow: auto !important;
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+
+  max-height: 800px !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+ * 5. 行号区域
+ * ========================================================= */
+
+.b3-typography .code-block .protyle-linenumber__rows,
+.protyle-wysiwyg .code-block .protyle-linenumber__rows {
+  width: 42px !important;
+
+  padding: 18px 8px 0 0 !important;
+  margin: 0 !important;
+
+  background: var(--zhi-code-content-bg) !important;
+  border: none !important;
+
+  box-sizing: border-box !important;
+}
+
+/* 行号文字 */
+.b3-typography .code-block .protyle-linenumber__rows span::before,
+.protyle-wysiwyg .code-block .protyle-linenumber__rows span::before {
+  color: var(--zhi-code-line-number-color) !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+ * 6. 去掉 mac 三色按钮效果
+ * ========================================================= */
+
+.code-block::after {
+  display: none !important;
+}
+
+/* =========================================================
+ * 7. Jupyter 自定义代码块按钮兼容
+ * ========================================================= */
+
+.protyle-wysiwyg [data-node-id][custom-jupyter-block-type][custom-jupyter-block-type=code]::after {
+  top: 5px;
+  left: 8.5em;
+}
+
+.protyle-wysiwyg [data-node-id][custom-jupyter-block-type][custom-jupyter-block-type=code]::before {
+  top: 9px;
+  left: 7.5em;
+}
+
+/* =========================================================
+ * 8. OneDark / Base16 代码高亮覆盖
+ * 用于解决浅色思源主题下不能选择深色代码高亮的问题
+ * ========================================================= */
+
+:root,
+html[data-theme-mode=light],
+html[data-theme-mode=dark],
+html[data-theme-mode=green] {
+  --zhi-onedark-bg: #333333;
+
+  /* 原 OneDark 是 #abb2bf，这里提亮，提升浅色界面下深色代码块的可读性 */
+  --zhi-onedark-fg: #dcdfe4;
+
+  /* 原 OneDark base03 是 #545862，在 #333333 背景上太暗，这里提亮 */
+  --zhi-onedark-comment: #8b949e;
+
+  --zhi-onedark-red: #e06c75;
+  --zhi-onedark-orange: #d19a66;
+  --zhi-onedark-yellow: #e5c07b;
+  --zhi-onedark-green: #98c379;
+  --zhi-onedark-cyan: #56b6c2;
+  --zhi-onedark-blue: #61afef;
+  --zhi-onedark-purple: #c678dd;
+  --zhi-onedark-darkred: #be5046;
+}
+
+/* 代码块基础文字颜色 */
+.b3-typography .code-block div.hljs,
+.protyle-wysiwyg .code-block div.hljs {
+  color: var(--zhi-onedark-fg) !important;
+  background: var(--zhi-onedark-bg) !important;
+}
+
+/* 注释 */
+.b3-typography .code-block .hljs-comment,
+.b3-typography .code-block .hljs-quote,
+.protyle-wysiwyg .code-block .hljs-comment,
+.protyle-wysiwyg .code-block .hljs-quote {
+  color: var(--zhi-onedark-comment) !important;
+  font-style: italic;
+}
+
+/* 关键字 */
+.b3-typography .code-block .hljs-keyword,
+.b3-typography .code-block .hljs-selector-tag,
+.b3-typography .code-block .hljs-subst,
+.protyle-wysiwyg .code-block .hljs-keyword,
+.protyle-wysiwyg .code-block .hljs-selector-tag,
+.protyle-wysiwyg .code-block .hljs-subst {
+  color: var(--zhi-onedark-purple) !important;
+}
+
+/* 字符串 */
+.b3-typography .code-block .hljs-string,
+.b3-typography .code-block .hljs-doctag,
+.protyle-wysiwyg .code-block .hljs-string,
+.protyle-wysiwyg .code-block .hljs-doctag {
+  color: var(--zhi-onedark-green) !important;
+}
+
+/* 数字、字面量、变量 */
+.b3-typography .code-block .hljs-number,
+.b3-typography .code-block .hljs-literal,
+.b3-typography .code-block .hljs-variable,
+.b3-typography .code-block .hljs-template-variable,
+.b3-typography .code-block .hljs-tag .hljs-attr,
+.protyle-wysiwyg .code-block .hljs-number,
+.protyle-wysiwyg .code-block .hljs-literal,
+.protyle-wysiwyg .code-block .hljs-variable,
+.protyle-wysiwyg .code-block .hljs-template-variable,
+.protyle-wysiwyg .code-block .hljs-tag .hljs-attr {
+  color: var(--zhi-onedark-orange) !important;
+}
+
+/* 函数名、类名、标题 */
+.b3-typography .code-block .hljs-title,
+.b3-typography .code-block .hljs-title.class_,
+.b3-typography .code-block .hljs-title.function_,
+.b3-typography .code-block .hljs-section,
+.protyle-wysiwyg .code-block .hljs-title,
+.protyle-wysiwyg .code-block .hljs-title.class_,
+.protyle-wysiwyg .code-block .hljs-title.function_,
+.protyle-wysiwyg .code-block .hljs-section {
+  color: var(--zhi-onedark-blue) !important;
+}
+
+/* 类型、内置对象 */
+.b3-typography .code-block .hljs-type,
+.b3-typography .code-block .hljs-class,
+.b3-typography .code-block .hljs-built_in,
+.b3-typography .code-block .hljs-builtin-name,
+.protyle-wysiwyg .code-block .hljs-type,
+.protyle-wysiwyg .code-block .hljs-class,
+.protyle-wysiwyg .code-block .hljs-built_in,
+.protyle-wysiwyg .code-block .hljs-builtin-name {
+  color: var(--zhi-onedark-yellow) !important;
+}
+
+/* 标签名、属性名、选择器 */
+.b3-typography .code-block .hljs-name,
+.b3-typography .code-block .hljs-tag,
+.b3-typography .code-block .hljs-attr,
+.b3-typography .code-block .hljs-attribute,
+.b3-typography .code-block .hljs-selector-id,
+.b3-typography .code-block .hljs-selector-class,
+.b3-typography .code-block .hljs-selector-attr,
+.b3-typography .code-block .hljs-selector-pseudo,
+.protyle-wysiwyg .code-block .hljs-name,
+.protyle-wysiwyg .code-block .hljs-tag,
+.protyle-wysiwyg .code-block .hljs-attr,
+.protyle-wysiwyg .code-block .hljs-attribute,
+.protyle-wysiwyg .code-block .hljs-selector-id,
+.protyle-wysiwyg .code-block .hljs-selector-class,
+.protyle-wysiwyg .code-block .hljs-selector-attr,
+.protyle-wysiwyg .code-block .hljs-selector-pseudo {
+  color: var(--zhi-onedark-red) !important;
+}
+
+/* 正则、链接、符号 */
+.b3-typography .code-block .hljs-regexp,
+.b3-typography .code-block .hljs-link,
+.b3-typography .code-block .hljs-symbol,
+.b3-typography .code-block .hljs-bullet,
+.protyle-wysiwyg .code-block .hljs-regexp,
+.protyle-wysiwyg .code-block .hljs-link,
+.protyle-wysiwyg .code-block .hljs-symbol,
+.protyle-wysiwyg .code-block .hljs-bullet {
+  color: var(--zhi-onedark-cyan) !important;
+}
+
+/* 元信息 */
+.b3-typography .code-block .hljs-meta,
+.b3-typography .code-block .hljs-meta .hljs-keyword,
+.protyle-wysiwyg .code-block .hljs-meta,
+.protyle-wysiwyg .code-block .hljs-meta .hljs-keyword {
+  color: var(--zhi-onedark-orange) !important;
+}
+
+/* 删除 / 新增 */
+.b3-typography .code-block .hljs-deletion,
+.protyle-wysiwyg .code-block .hljs-deletion {
+  color: var(--zhi-onedark-red) !important;
+}
+
+.b3-typography .code-block .hljs-addition,
+.protyle-wysiwyg .code-block .hljs-addition {
+  color: var(--zhi-onedark-green) !important;
+}
+
+/* 加粗、斜体 */
+.b3-typography .code-block .hljs-strong,
+.protyle-wysiwyg .code-block .hljs-strong {
+  font-weight: 700;
+}
+
+.b3-typography .code-block .hljs-emphasis,
+.protyle-wysiwyg .code-block .hljs-emphasis {
+  font-style: italic;
+}
