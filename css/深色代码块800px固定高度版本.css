@@ -1,0 +1,130 @@
+/* 无论浅色 / 暗色 / 绿色主题，代码块统一使用暗色配色 */
+:root,
+html[data-theme-mode=light],
+html[data-theme-mode=dark],
+html[data-theme-mode=green] {
+  --zhi-code-tab-bg: #000;              /* 代码标签栏背景：黑色 */
+  --zhi-code-content-bg: #1e1e1e;       /* 代码内容背景：深灰色 */
+  --zhi-code-text-color: #d4d4d4;       /* 代码文字颜色：浅灰 */
+  --zhi-code-border-color: #333;        /* 代码块边框颜色 */
+  --zhi-code-line-number: #858585;      /* 行号颜色 */
+}
+
+/* 隐藏语言标识后的默认箭头和复制按钮 */
+#preview .protyle-action__language {
+  right: .2rem !important;
+}
+#preview .protyle-action__language:after {
+  display: none !important;
+}
+#preview .protyle-action__copy {
+  display: none !important;
+}
+
+/* 代码块外观样式 */
+.code-block {
+  border: .5px solid var(--zhi-code-border-color) !important;
+  border-radius: 5px !important;
+  padding-top: 32px !important;
+  background: var(--zhi-code-tab-bg) !important;
+
+/*   width: 25%;                                            代码块默认宽度 25% */
+/*   max-width: 100%;                                       代码块最大宽度 100% */
+/*   resize: horizontal;                                    宽度可拖动 */
+/*   overflow: auto;                                        字符超出宽度时自动滚动 */
+}
+
+/* 代码高亮区域样式 */
+.b3-typography div.hljs, 
+.protyle-wysiwyg div.hljs {
+  color: var(--zhi-code-text-color) !important;
+  padding: 8px;
+  border-top: .5px solid var(--zhi-code-border-color) !important;
+  border-radius: 0 0 5px 5px !important;
+  background: var(--zhi-code-content-bg) !important;
+
+  /* 固定最大 800px 高度 + 代码块内滚动 */
+  overflow: auto !important;
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+  max-height: 800px !important;
+}
+
+/* Jupyter 自定义代码块按钮调整 */
+.protyle-wysiwyg [data-node-id][custom-jupyter-block-type][custom-jupyter-block-type=code]:after {
+  top: 5px;
+  left: 8.5em;
+}
+.protyle-wysiwyg [data-node-id][custom-jupyter-block-type][custom-jupyter-block-type=code]:before {
+  top: 9px;
+  left: 7.5em;
+}
+
+/* 行号样式 */
+.protyle-linenumber__rows {
+  width: 40px;
+  padding: 8px 4px 4px;
+  margin-bottom: 0;
+  border-top: .5px solid var(--zhi-code-border-color) !important;
+  font-family: var(--b3-font-family-code);
+  border-top-left-radius: 0;
+  background: var(--zhi-code-content-bg) !important;
+}
+.protyle-linenumber__rows span:before {
+  color: var(--zhi-code-line-number) !important;
+}
+
+/* 语言显示按钮样式（右上角） */
+.b3-typography .code-block .protyle-action .protyle-action__language,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language {
+  margin-top: 0;
+  position: absolute;
+  right: 3.5em;
+  border-radius: 1px;
+  opacity: 1 !important;
+  font-family: var(--b3-font-family-code);
+  color: var(--zhi-code-text-color) !important;
+}
+.b3-typography .code-block .protyle-action .protyle-action__language:after,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language:after {
+  content: "›";
+  font-family: var(--b3-font-family-code);
+  color: #80808080;
+  opacity: 1;
+}
+
+/* 行内代码块样式 */
+code.hljs {
+  border: 1px solid var(--zhi-code-border-color) !important;
+  background: var(--zhi-code-content-bg) !important;
+  color: var(--zhi-code-text-color) !important;
+}
+
+/* 图标和语言按钮通用样式 */
+.b3-typography .code-block .protyle-action .protyle-icon,
+.b3-typography .code-block .protyle-action .protyle-action__language,
+.protyle-wysiwyg .code-block .protyle-action .protyle-icon,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language {
+  opacity: 1 !important;
+  background-color: transparent !important;
+}
+.b3-typography .code-block .protyle-action .protyle-icon svg,
+.b3-typography .code-block .protyle-action .protyle-action__language svg,
+.protyle-wysiwyg .code-block .protyle-action .protyle-icon svg,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language svg {
+  color: gray;
+}
+
+/* 设置顶部三个 mac 按钮样式 */
+.code-block::after {
+  content: ' ';
+  position: absolute;
+  background: #fa625c;
+  box-shadow: 23px 0 #fdbc40, 45px 0 #35cd4b;
+  border-radius: 7px;
+  top: 10px;
+  left: 15px;
+  height: 12px;
+  width: 12px;
+  z-index: 1;
+}
